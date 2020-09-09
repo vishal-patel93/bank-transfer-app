@@ -27,7 +27,7 @@
         </div>
         <div class="row mb-3">
             <div class="col-6 ml-3 mr-3">
-                <button type="submit" class="btn btn-primary" (click)="makePayment()" [disabled]="false">Submit</button>
+                <button type="submit" class="btn btn-primary" (click)="makePayment()" [disabled]="!isFormValid() || overDraftError">Submit</button>
             </div>
         </div>
     </form>

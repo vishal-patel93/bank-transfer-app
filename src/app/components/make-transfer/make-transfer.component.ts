@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 import { TransactionService } from 'src/app/services/transaction.service';
 import { Router } from '@angular/router';
@@ -18,8 +18,8 @@ export class MakeTransferComponent implements OnInit {
   hasTransactioBeenAdded: boolean = false;
   overDraftError: boolean = false;
   makePaymentForm = new FormGroup({
-    merchant: new FormControl(''),
-    transferAmount: new FormControl('')
+    merchant: new FormControl('', Validators.required),
+    transferAmount: new FormControl('', Validators.required)
   });
 
   constructor(private transactionService: TransactionService,
@@ -63,4 +63,8 @@ export class MakeTransferComponent implements OnInit {
     sessionStorage.setItem('updatedBalance', `${this.updatedBalance}`);
   }
 
+  isFormValid() {
+    console.log(this.makePaymentForm.valid)
+    return this.makePaymentForm.valid;
+  }
 }
