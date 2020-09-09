@@ -1,15 +1,15 @@
 <div class="container">
-  <div class="row mt-4 mb-4">
-    <div class="col text-center">
-      Welcome to PeachBank Money Transfer App!
-    </div>
+  <div class="row ml-0 mr-0 mt-4 mb-4">
+    <span>
+      <img src="../assets/logo.jpg">
+    </span>
   </div>
   <div class="row d-flex mb-4">
-    <div class="col-6 text-center">
-      <button class="btn btn-secondary" (click)="transferMoney()">Transfer money</button>
+    <div class="col-2-auto mr-3 ml-3 text-center">
+      <button class="btn btn-primary" (click)="transferMoney()">Transfer money</button>
     </div>
-    <div class="col-6 text-center">
-      <button class="btn btn-secondary" (click)="viewTransactions()">View transactions</button>
+    <div class="col-2-auto text-center">
+      <button class="btn btn-primary" (click)="viewTransactions()">View transactions</button>
     </div>
   </div>
   <router-outlet></router-outlet>

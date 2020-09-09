@@ -127,7 +127,6 @@ export class TransactionService {
 
   getSpecificMerchant(merchant) {
     let merchantLogo = '';
-    console.log(merchant)
     if (this.getAllMerchantLogos() != null) {
       this.getAllMerchantLogos().forEach(item => {
         if (item.merchant == merchant) {
