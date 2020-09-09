@@ -64,7 +64,7 @@ Components Model
 			        /  \                                \
                    /    \                                \
                   /      \                                \
-	    Make-transfer  Preview transactions       Transaction Service
+	    Make-transfer  View transactions       Transaction Service
 			     
 			
 
