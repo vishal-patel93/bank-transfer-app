@@ -16,5 +16,9 @@
     <div class="row ml-1 text-danger" *ngIf="overDraftError"> 
         <p>You have reached the overdraft limit, please fund your account to continue.</p>
     </div>
-    <button type="submit" class="btn btn-primary" (click)="makePayment()" [disabled]="false">Submit</button>
+    <div class="row">
+        <div class="col-6">
+            <button type="submit" class="btn btn-primary" (click)="makePayment()" [disabled]="false">Submit</button>
+        </div>
+    </div>
 </form>

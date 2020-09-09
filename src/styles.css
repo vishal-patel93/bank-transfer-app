@@ -1,2 +1,32 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/dist/css/bootstrap.css";
+
+body {
+	font-family: 'Kanit', sans-serif !important;
+}
+
+.btn-primary{
+	color:#ffe1d3;
+	background-color:#ee7033;
+	border-color: #ee7033;
+	outline: 0;
+}
+
+.btn-primary:hover, .btn-primary:focus{
+	color:#ee7033;
+	background-color:#ffe1d3;
+	outline: 0;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #ee7033;
+}
+
+.btn-primary:active{
+	color:#ee7033 !important;
+	background-color:#ffe1d3 !important;
+	border: none !important;
+}
+
+.btn-primary.disabled:hover, .btn-primary.disabled:focus{
+	background-color:#ee7033;
+}

@@ -9,3 +9,8 @@
 .transaction-amount {
     font-weight: 600;
 }
+
+.transactions-header {
+    background-color: rgb(47, 255, 203);
+    width: 100%;
+}
