@@ -1,0 +1,13 @@
+<table class="table">
+    <thead>
+    </thead>
+    <tbody *ngFor="let transaction of transactions.data">
+        <tr>
+            <th class="transaction-color"></th>
+            <td>{{ parseDate(transaction.transactionDate) }}</td>
+            <td><img src="{{ transaction.merchantLogo }}" class="merchant-logo" alt="Merchant Logo"></td>
+            <td>{{ transaction.merchant }}</td>
+            <td class="transaction-amount">-${{ transaction.amount }}</td>
+        </tr>
+    </tbody>
+</table>
