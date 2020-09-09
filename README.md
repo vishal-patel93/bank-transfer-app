@@ -25,3 +25,50 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+
+User Functionality
+Transfering Money
+Using the Transfer Money form the user should be able to:
+
+Fill in the TO and AMOUNT fields of the form (the FROM field is DISABLED - i.e. this would be changed in another part of the full application).
+
+Press "Submit" to submit the entered data.
+
+Transaction History
+Displays a list of Transactions.
+
+Project Development
+File Structure
+	-/src
+		-/app
+			-/assets
+				-background.jpg
+				-logo.jpg
+			-/components
+				-/make-transfer
+				-/view-transactions
+			-/css
+				-styles.css
+			-/services
+				-transaction.service.ts (since there's only one)
+			-app.component.html
+			-app.component.ts
+Assets
+consists of: background.jpg, logo.jpg, and transactions.json (in service)
+
+Components Model
+	  	      Root: App Component - app.component.html
+
+			        App                             Services
+			        /  \                                \
+                   /    \                                \
+                  /      \                                \
+	    Make-transfer  Preview transactions       Transaction Service
+			     
+			
+
+Service Communication: TransactionService
+
+Mobile First
+App designed with mobile first in mind. Uses Bootstrap for responsiveness.
