@@ -3,12 +3,16 @@
     <span>
       <img src="../assets/logo.jpg">
     </span>
+    <span>
+      <button class="ml-4 mt-2 btn btn-secondary" (click)="switchLang('en')">English</button>
+      <button class="ml-4 mt-2 btn btn-secondary" (click)="switchLang('fr')">French</button>
+    </span>
   </div>
   <div class="row d-flex mb-4">
     <div class="col-2-auto mr-3 ml-3 text-center">
       <button class="btn btn-primary" (click)="transferMoney()">Transfer money</button>
     </div>
-    <div class="col-2-auto text-center">
+    <div class="col-2-auto mr-3 text-center">
       <button class="btn btn-primary" (click)="viewTransactions()">View transactions</button>
     </div>
   </div>

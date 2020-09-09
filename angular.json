@@ -20,7 +20,8 @@
             "tsConfig": "tsconfig.app.json",
             "aot": true,
             "assets": [
-              "src/assets"
+              "src/assets",
+              "src/assets/i18n/en.json"
             ],
             "styles": [
               "src/styles.css"
