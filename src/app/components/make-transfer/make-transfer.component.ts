@@ -64,7 +64,6 @@ export class MakeTransferComponent implements OnInit {
   }
 
   isFormValid() {
-    console.log(this.makePaymentForm.valid)
     return this.makePaymentForm.valid;
   }
 }

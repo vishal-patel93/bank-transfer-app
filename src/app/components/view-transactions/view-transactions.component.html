@@ -7,7 +7,13 @@
             Recent transactions
         </div>
     </div>
-    <table class="table">
+    <div class="row">
+        <form class="ml-3 mt-2 search-box" [formGroup]="searchForm">
+            <input placeholder="Search by typing.." (keyup.enter)="search()" formControlName="searchString">
+            <span class="ml-1 clear-search" (click)="clearSearch()"><strong>X</strong></span>
+        </form>
+    </div>
+    <table class="table" *ngIf="!searchMode">
         <tbody *ngFor="let transaction of transactions.data">
             <tr>
                 <th class="pr-1 pl-1" [ngStyle]="getRowColor(transaction)"></th>
@@ -18,4 +24,16 @@
             </tr>
         </tbody>
     </table>
+    <table class="table" *ngIf="searchMode">
+        <tbody *ngFor="let result of searchResults">
+            <tr>
+                <th class="pr-1 pl-1" [ngStyle]="getRowColor(result)"></th>
+                <td>{{ parseDate(result.transactionDate) }}</td>
+                <td><img src="{{ result.merchantLogo }}" class="merchant-logo" alt="Merchant Logo"></td>
+                <td>{{ result.merchant }}</td>
+                <td class="transaction-amount">-{{ result.amount | currency:'USD':true }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <p *ngIf="searchResults.length === 0">No search results found</p>
 </div>

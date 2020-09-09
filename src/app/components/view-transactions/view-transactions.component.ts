@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
+import { FormControl, FormGroup } from '@angular/forms';
 
 import { TransactionService } from 'src/app/services/transaction.service';
 
@@ -11,6 +12,11 @@ import { TransactionService } from 'src/app/services/transaction.service';
 export class ViewTransactionsComponent implements OnInit {
 
   transactions: any;
+  searchMode: boolean = false;
+  searchResults = [];
+  searchForm = new FormGroup({
+    searchString: new FormControl('')
+  })
 
   constructor(private transactionService: TransactionService,
               private sanitize: DomSanitizer) { }
@@ -36,4 +42,22 @@ export class ViewTransactionsComponent implements OnInit {
     }
   }
 
+  search() {
+    this.searchResults = [];
+    let searchString = this.searchForm.get('searchString').value;
+    if (searchString != null) {
+      this.transactionService.getTransactions().data.forEach(transaction => {
+        if (transaction.merchant.toLowerCase().includes(searchString)) {
+          this.searchResults.push(transaction);
+        } 
+      })
+    }
+    this.searchMode = true;
+    return this.searchResults;
+  }
+
+  clearSearch() {
+    this.searchForm.get('searchString').setValue('');
+    this.searchMode = false;
+  }
 }

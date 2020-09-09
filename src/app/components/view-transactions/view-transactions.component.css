@@ -13,3 +13,11 @@
 .container {
     width: 115% !important;
 }
+
+.search-box {
+    height: 40px;
+}
+
+.clear-search {
+    cursor: pointer;
+}
