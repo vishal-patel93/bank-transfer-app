@@ -17,16 +17,23 @@ export class ViewTransactionsComponent implements OnInit {
 
   ngOnInit(): void {
     this.transactions = this.transactionService.getTransactions();
-    console.log(this.transactions)
   }
 
   parseDate(epochDate) {
-    let date = new Date(epochDate * 1000);
-    return date.getFullYear();
+    let date = new Date(epochDate * 1000.0);
+    return `${date.getDay() + 1} ${date.toLocaleString('en-us', { month: 'short' })}`;
   }
 
   parseImage(imageData) {
     return this.sanitize.bypassSecurityTrustResourceUrl(imageData);
+  }
+
+  getRowColor(transaction) {
+    if (transaction != null) {
+      return {
+        'background-color': transaction.categoryCode
+      };
+    }
   }
 
 }

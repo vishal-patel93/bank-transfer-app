@@ -9,3 +9,7 @@
 .transaction-amount {
     font-weight: 600;
 }
+
+.container {
+    width: 115% !important;
+}

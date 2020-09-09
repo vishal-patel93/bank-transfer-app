@@ -49,7 +49,6 @@ export class MakeTransferComponent implements OnInit {
         "transactionDate": `${currentEpochDate}`,
         "transactionType": "Card Payment"
       }
-      console.log(transaction)
       this.transactionService.updateTransactions(transaction);
       this.updateAccountBalance(paymentAmount);
       sessionStorage.setItem('transactionAdded', 'true');

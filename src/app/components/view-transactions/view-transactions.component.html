@@ -8,11 +8,9 @@
         </div>
     </div>
     <table class="table">
-        <thead>
-        </thead>
         <tbody *ngFor="let transaction of transactions.data">
             <tr>
-                <th class="transaction-color"></th>
+                <th class="pr-1 pl-1" [ngStyle]="getRowColor(transaction)"></th>
                 <td>{{ parseDate(transaction.transactionDate) }}</td>
                 <td><img src="{{ transaction.merchantLogo }}" class="merchant-logo" alt="Merchant Logo"></td>
                 <td>{{ transaction.merchant }}</td>
