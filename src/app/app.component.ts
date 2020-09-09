@@ -9,16 +9,21 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class AppComponent implements OnInit {
   
-  isEnglish: boolean;
+  isEnglish: boolean = true;
   isFrench: boolean;
 
   constructor(private router: Router,
-              private translateService: TranslateService) {}
+              private translateService: TranslateService) {
+  
+                translateService.addLangs(['en', 'fr']);
+                  if (window.navigator.language.includes('fr')) {
+                    translateService.setDefaultLang('fr');
+                  } else {
+                    translateService.setDefaultLang('en');
+                  }
+              }
 
-  ngOnInit() {
-    this.isEnglish = sessionStorage.getItem('currentLang') == 'en';
-    this.isFrench = sessionStorage.getItem('currentLang') == 'fr'
-  }
+  ngOnInit() {}
 
   transferMoney() {
     this.router.navigate(['make-transfer']);
@@ -29,8 +34,9 @@ export class AppComponent implements OnInit {
   }
 
   switchLang(language: string) {
+    this.isEnglish = language.includes('en');
+    this.isFrench = language.includes('fr');
     this.translateService.use(language);
-    this.translateService.setDefaultLang(language);
     sessionStorage.setItem('currentLang', language);
   }
 }

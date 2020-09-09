@@ -1,5 +1,20 @@
 {
+    "siteLanguage": "French",
     "makeTransfer": {
-        "title": "Make a Transfer"
+        "title": "Make a Transfer",
+        "submit": "Submit",
+        "fromAccount": "From Account",
+        "toAccount": "To Account",
+        "amount": "Amount",
+        "overDraftError": "You have reached the overdraft limit, please fund your account to continue."
+    },
+    "home": {
+        "transferMoney": "Transfer money",
+        "viewTransactions": "View transactions"
+    },
+    "viewTransactions": {
+        "recentTransactions": "Recent transactions",
+        "searchPlaceHolder": "Search by typing..",
+        "noSearchResults": "No search results found"
     }
 }

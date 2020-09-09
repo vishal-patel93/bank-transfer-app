@@ -4,16 +4,16 @@
       <img src="../assets/logo.jpg">
     </span>
     <span>
-      <button class="ml-4 mt-2 btn btn-secondary" (click)="switchLang('en')">English</button>
-      <button class="ml-4 mt-2 btn btn-secondary" (click)="switchLang('fr')">French</button>
+      <button class="ml-4 mt-2 btn btn-secondary" *ngIf="isFrench" (click)="switchLang('en')">{{ "siteLanguage" | translate }}</button>
+      <button class="ml-4 mt-2 btn btn-secondary" *ngIf="isEnglish" (click)="switchLang('fr')">{{ "siteLanguage" | translate }}</button>
     </span>
   </div>
   <div class="row d-flex mb-4">
     <div class="col-2-auto mr-3 ml-3 text-center">
-      <button class="btn btn-primary" (click)="transferMoney()">Transfer money</button>
+      <button class="btn btn-primary" (click)="transferMoney()">{{ "home.transferMoney" | translate }}</button>
     </div>
     <div class="col-2-auto mr-3 text-center">
-      <button class="btn btn-primary" (click)="viewTransactions()">View transactions</button>
+      <button class="btn btn-primary" (click)="viewTransactions()">{{ "home.viewTransactions" | translate }}</button>
     </div>
   </div>
   <router-outlet></router-outlet>

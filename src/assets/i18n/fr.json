@@ -1,5 +1,20 @@
 {
+    "siteLanguage": "Anglaise",
     "makeTransfer": {
-        "title": "Effectuer un transfert"
+        "title": "Effectuer un transfert",
+        "submit": "Soumettre",
+        "fromAccount": "Du compte",
+        "toAccount": "Estimer",
+        "amount": "Montante",
+        "overDraftError": "Vous avez atteint la limite de découvert, veuillez approvisionner votre compte pour continuer."
+    },
+    "home": {
+        "transferMoney": "Transférer de l'argent",
+        "viewTransactions": "Voir les transactions"
+    },
+    "viewTransactions": {
+        "recentTransactions": "Transactions récentes",
+        "searchPlaceHolder": "Recherche en tapant..",
+        "noSearchResults": "Aucun résultat de recherche trouvé"
     }
 }

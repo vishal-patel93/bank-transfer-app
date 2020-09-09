@@ -9,25 +9,25 @@
             </span> 
         </div> 
         <div class="form-group mt-3 ml-3 mr-3">
-            <label for="fromAccount">From Account</label>
+            <label for="fromAccount">{{ "makeTransfer.fromAccount" | translate }}</label>
             <input type="text" class="form-control" id="fromAccount" aria-describedby="fromAccount" placeholder="Free Checking(4692) - ${{accountBalance}}" disabled>
         </div>
         <div class="form-group ml-3 mr-3">
-            <label for="toAccount">To Account</label>
+            <label for="toAccount">{{ "makeTransfer.toAccount" | translate }}</label>
             <select class="custom-select" formControlName="merchant">
                 <option *ngFor="let merchant of merchants">{{ merchant }}</option>
             </select>
         </div>
         <div class="form-group ml-3 mr-3">
-            <label for="transferAmount">Amount</label>
+            <label for="transferAmount">{{ "makeTransfer.amount" | translate }}</label>
             <input type="number" class="form-control" id="transferAmount" aria-describedby="transferAmount" formControlName="transferAmount">
         </div>
         <div class="row ml-3 mr-3 text-danger" *ngIf="overDraftError"> 
-            <p>You have reached the overdraft limit, please fund your account to continue.</p>
+            <p>{{ "makeTransfer.overDraftError" | translate }}</p>
         </div>
         <div class="row mb-3">
             <div class="col-6 ml-3 mr-3">
-                <button type="submit" class="btn btn-primary" (click)="makePayment()" [disabled]="!isFormValid() || overDraftError">Submit</button>
+                <button type="submit" class="btn btn-primary" (click)="makePayment()" [disabled]="!isFormValid() || overDraftError">{{ "makeTransfer.submit" | translate }}</button>
             </div>
         </div>
     </form>
