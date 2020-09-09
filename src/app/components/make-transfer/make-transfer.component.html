@@ -1,24 +1,34 @@
-<form [formGroup]="makePaymentForm">
-    <div class="form-group">
-        <label for="fromAccount">From Account</label>
-        <input type="text" class="form-control" id="fromAccount" aria-describedby="fromAccount" placeholder="Free Checking(4692) - ${{accountBalance}}" disabled>
-    </div>
-    <div class="form-group">
-        <label for="toAccount">To Account</label>
-        <select class="custom-select" formControlName="merchant">
-            <option *ngFor="let merchant of merchants">{{ merchant }}</option>
-        </select>
-    </div>
-    <div class="form-group">
-        <label for="transferAmount">Amount</label>
-        <input type="number" class="form-control" id="transferAmount" aria-describedby="transferAmount" formControlName="transferAmount">
-    </div>
-    <div class="row ml-1 text-danger" *ngIf="overDraftError"> 
-        <p>You have reached the overdraft limit, please fund your account to continue.</p>
-    </div>
-    <div class="row">
-        <div class="col-6">
-            <button type="submit" class="btn btn-primary" (click)="makePayment()" [disabled]="false">Submit</button>
+<div class="row ml-0 mr-0 content">
+    <form [formGroup]="makePaymentForm">
+        <div class="row ml-0 mr-0 pt-2 pb-2 transfer-header">
+            <span class="ml-3">
+                <img src="../../../assets/icons/briefcase.png">
+            </span>
+            <span class="ml-4 text-center">
+                Make a Transfer
+            </span> 
+        </div> 
+        <div class="form-group mt-3 ml-3">
+            <label for="fromAccount">From Account</label>
+            <input type="text" class="form-control" id="fromAccount" aria-describedby="fromAccount" placeholder="Free Checking(4692) - ${{accountBalance}}" disabled>
         </div>
-    </div>
-</form>
+        <div class="form-group ml-3">
+            <label for="toAccount">To Account</label>
+            <select class="custom-select" formControlName="merchant">
+                <option *ngFor="let merchant of merchants">{{ merchant }}</option>
+            </select>
+        </div>
+        <div class="form-group ml-3">
+            <label for="transferAmount">Amount</label>
+            <input type="number" class="form-control" id="transferAmount" aria-describedby="transferAmount" formControlName="transferAmount">
+        </div>
+        <div class="row ml-3 text-danger" *ngIf="overDraftError"> 
+            <p>You have reached the overdraft limit, please fund your account to continue.</p>
+        </div>
+        <div class="row mb-3">
+            <div class="col-6 ml-3">
+                <button type="submit" class="btn btn-primary" (click)="makePayment()" [disabled]="false">Submit</button>
+            </div>
+        </div>
+    </form>
+</div>
